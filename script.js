@@ -30,13 +30,24 @@ console.log(getHumanChoice())
 let humanScore = 0;
 let computerScore = 0;
 
+const humanChoice = humanChoice.toLowerCase();
+
 function playRound(humanChoice, computerChoice) {
-    const noCase = humanChoice.toLowerCase();
-    const rock = 'rock';
-    const paper = 'paper';
-    const scissors = 'scissors';
-    
-    if (noCase === 'rock' && computerChoice === )
+    if (humanChoice === computerChoice) {
+        return 'It\'s a tie!';
+    } else if ( 
+        (humanChoice === 'rock' &&
+    computerChoice === 'scissors') ||
+        (humanChoice === 'paper' && 
+    computerChoice === 'rock') ||
+        (humanChoice === 'scissors' && 
+    computerChoice === 'paper')
+    ) {
+        return 'The human wins!';
+    } else {
+        return 'The computer wins!';
+    }
+
 }
 
 const humanSelection = getHumanChoice();
