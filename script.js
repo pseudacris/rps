@@ -34,6 +34,7 @@ const humanSelection = choice;
 const computerSelection = compChoice;
 
 function playRound(humanChoice, computerChoice) {
+    let result;
     if (humanChoice === computerChoice) {
         return 'It\'s a tie!';
     } else if ( 
@@ -44,17 +45,28 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice === 'scissors' && 
     computerChoice === 'paper')
     ) {
-       console.log('The human wins!');
-    } else {
-        console.log('The computer wins!');
-    }
-    if (humanChoice === 'The human wins!') {
+        result = 'Player wins!';        
+        console.log(result);
         humanScore++;
-        console.log(`Human score is: ${humanScore}`);
-    } else if (computerChoice === 'The computer wins!') {
-        computerScore ++;
-        console.log(`Computer score is: ${computerScore}`);
+        console.log(`Player score: ${humanScore}`);
+    } else {
+        result = 'You lose!';
+        console.log(result);
+        computerScore++;
+        console.log(`Computer score: ${computerScore}`);
     }
+    // if (humanChoice === 'The human wins!') {
+    //     humanScore++;
+    //     console.log(`Human score is: ${humanScore}`);
+    // } else if (computerChoice === 'The computer wins!') {
+    //     computerScore ++;
+    //     console.log(`Computer score is: ${computerScore}`);
+    // } else {
+        
+    //     console.log(`Human score is: ${humanScore}`);
+    //     console.log(`Computer score is: ${computerScore}`);
+    //     }
+    
     
 }
 
