@@ -19,10 +19,8 @@ function getHumanChoice(choice) {
         choice === 'paper' || 
         choice === 'scissors') {
             return choice;
-
     } else {
         alert('Invalid selection! Try again.');
-        
     }
 }
 
@@ -46,12 +44,11 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice === 'scissors' && 
     computerChoice === 'paper')
     ) {
-        return 'The human wins!';
+       console.log('The human wins!');
     } else {
-        return 'The computer wins!';
+        console.log('The computer wins!');
     }
 }
-
 
 console.log(playRound(humanSelection, computerSelection));
 
