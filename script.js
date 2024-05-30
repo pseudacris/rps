@@ -48,6 +48,14 @@ function playRound(humanChoice, computerChoice) {
     } else {
         console.log('The computer wins!');
     }
+    if (humanChoice === 'The human wins!') {
+        humanScore++;
+        console.log(`Human score is: ${humanScore}`);
+    } else if (computerChoice === 'The computer wins!') {
+        computerScore ++;
+        console.log(`Computer score is: ${computerScore}`);
+    }
+    
 }
 
 console.log(playRound(humanSelection, computerSelection));
