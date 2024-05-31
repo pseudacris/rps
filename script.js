@@ -31,34 +31,43 @@ const humanSelection = choice;
 const computerSelection = compChoice;
 
 function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
 
-    function playRound(humanChoice, computerChoice) {
-        let result;
-        if (humanChoice === computerChoice) {
-            return 'It\'s a tie!';
-        } else if ( 
-            (humanChoice === 'rock' &&
-        computerChoice === 'scissors') ||
-            (humanChoice === 'paper' && 
-        computerChoice === 'rock') ||
-            (humanChoice === 'scissors' && 
-        computerChoice === 'paper')
-        ) {
-            result = 'Player wins!';        
-            console.log(result);
-            humanScore++;
-            console.log(`Player score: ${humanScore}`);
-        } else {
-            result = 'You lose!';
-            console.log(result);
-            computerScore++;
-            console.log(`Computer score: ${computerScore}`);
-        }
+    
+        function playRound(humanChoice, computerChoice) {
+            let result;
+            if (humanChoice === computerChoice) {
+                return 'It\'s a tie!';
+            } else if ( 
+                (humanChoice === 'rock' &&
+            computerChoice === 'scissors') ||
+                (humanChoice === 'paper' && 
+            computerChoice === 'rock') ||
+                (humanChoice === 'scissors' && 
+            computerChoice === 'paper')
+            ) {
+                result = 'Player wins!';        
+                console.log(result);
+                humanScore++;
+                console.log(`Player score: ${humanScore}`);
+            } else {
+                result = 'You lose!';
+                console.log(result);
+                computerScore++;
+                console.log(`Computer score: ${computerScore}`);
+            }
+            
         
-    }
-    console.log(playRound(humanSelection, computerSelection));   
+        }    
+console.log(playRound(humanSelection, computerSelection));   
 }   
 
+for (let i = 1; i < 6; i++) {
+    console.log(playGame());
+    console.log(getComputerChoice());
+    getHumanChoice();
+}
 
 
 
