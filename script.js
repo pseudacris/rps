@@ -34,40 +34,44 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    console.log(getComputerChoice());
-    getHumanChoice();
-    function playRound(humanChoice, computerChoice) {
-        let result;
-        if (humanChoice === computerChoice) {
-            return 'It\'s a tie!';
-        } else if ( 
-            (humanChoice === 'rock' &&
-        computerChoice === 'scissors') ||
-            (humanChoice === 'paper' && 
-        computerChoice === 'rock') ||
-            (humanChoice === 'scissors' && 
-        computerChoice === 'paper')
-        ) {
-            result = 'Player wins!';        
-            console.log(result);
-            humanScore++;
-            console.log(`Player score: ${humanScore}`);
-        } else {
-            result = 'You lose!';
-            console.log(result);
-            computerScore++;
-            console.log(`Computer score: ${computerScore}`);
-        }
+    for (let i = 1; i < 6; i++) {
         
+        function playRound(humanChoice, computerChoice) {
+            console.log(getComputerChoice());
+            getHumanChoice();
+
+
+            let result;
+            if (humanChoice === computerChoice) {
+                return 'It\'s a tie!';
+            } else if ( 
+                (humanChoice === 'rock' &&
+            computerChoice === 'scissors') ||
+                (humanChoice === 'paper' && 
+            computerChoice === 'rock') ||
+                (humanChoice === 'scissors' && 
+            computerChoice === 'paper')
+            ) {
+                result = 'Player wins!';        
+                console.log(result);
+                humanScore++;
+                console.log(`Player score: ${humanScore}`);
+            } else {
+                result = 'You lose!';
+                console.log(result);
+                computerScore++;
+                console.log(`Computer score: ${computerScore}`);
+            }
+        }    
     
     }    
 console.log(playRound(humanSelection, computerSelection));   
 }   
 
-for (let i = 1; i < 6; i++) {
+// for (let i = 1; i < 6; i++) {
     console.log(playGame());
     
-}
+// }
 
 
 
